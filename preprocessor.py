@@ -285,7 +285,7 @@ class Preprocessor:
 
     def save_df(self, set_type='train'):
         if set_type == 'train':
-            self.df_final.to_csv('data/train_preprocessed.csv', index=True)
+            self.df_final.to_csv('data/preprocessed_data.csv', index=True)
         elif set_type == 'test':
             self.df_final.to_csv('data/test_preprocessed.csv', index=True)
 
