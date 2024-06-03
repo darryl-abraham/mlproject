@@ -1,0 +1,20 @@
+Read me file for Machine Learning course project.
+
+File descriptions:
+-ML_Project_ABRAHAM_PACIELLO.pdf:: PDF report of project
+-eda.ipynb: Exploratory data analysis file
+-preprocessing.ipynb: Preprocessing methods developed here
+-preprocessor.py: File used to conduct final preprocessing on data
+-modelling.ipynb: Modelling conducted here
+-SWEETVIZ_REPORT.html: EDA html file, open for detailed EDA on all variables (see Section 2.5 in the report)
+-./data: Directory including files: cup98LRN.txt (raw data file), preprocessed_data.csv
+-./eval: Directory including files: logistic_regression_eval.csv (results of hyperparameter tuning, i.e. parameters used and CV scores
+
+Instructions to reproduce results:
+1. Run preprocessor.py in terminal using command: "python preprocessor.py train <path_to_data>"
+2. Run the modelling notebook inserting the correct path to the preprossed_data.csv (this file is created in ./data folder)
+
+For a more easily understandable preprocessing steps please refer to preprocessor.ipynb, here all steps are laid out with commments and explanations.
+
+N.B. The modelling notebook may take a long time to run due to the gridsearch hyperparameter tuning.
+

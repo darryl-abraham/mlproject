@@ -55,7 +55,7 @@ class Preprocessor:
         print("Detecting outliers...")
         self.outlier_detection()
         e = time.time()
-        print(f"Outliers removed in {e - s:.2f} seconds.")
+        print(f"{self.num_outliers} outliers removed in {e - s:.2f} seconds.")
         s = time.time()
         print("Imputing missing values...")
         self.impute()
@@ -224,6 +224,8 @@ class Preprocessor:
         # Define the lower and upper bounds for outliers
         lower_bound = Q1 - factor * IQR
         upper_bound = Q3 + factor * IQR
+        # Number of outliers
+        self.num_outliers = len(self.df[(self.df[self.num_feats] < lower_bound) | (self.df[self.num_feats] > upper_bound)])
         # Replace outliers with np.nan
         self.df[self.num_feats] = self.df[self.num_feats].mask((self.df[self.num_feats] < lower_bound) | (self.df[self.num_feats] > upper_bound))
 
